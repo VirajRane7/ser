@@ -19,7 +19,7 @@ const db = mysql.createPool({
 
 
 app.get("/api/get", (req, res)=> {
-
+    res.send("Heyyyy")
     const sqlGet = "SELECT * FROM contact_db"
     db.query(sqlGet, (error, result)=>{
         res.send(result);
