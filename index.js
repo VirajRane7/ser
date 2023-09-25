@@ -5,12 +5,12 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 
-// const db = mysql.createPool({
-//     host: "localhost",
-//     user: "root",
-//     password: "@12345678",
-//     database: "crud_contact"
-// }); 
+const db = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "@12345678",
+    database: "crud_contact"
+}); 
 
 
 // app.use(cors());
@@ -18,13 +18,13 @@ const cors = require("cors");
 // app.use(bodyParser.urlencoded({extended: true}));
 
 
-// app.get("/api/get", (req, res)=> {
+app.get("/api/get", (req, res)=> {
 
-//     const sqlGet = "SELECT * FROM contact_db"
-//     db.query(sqlGet, (error, result)=>{
-//         res.send(result);
-//     })
-// })
+    const sqlGet = "SELECT * FROM contact_db"
+    db.query(sqlGet, (error, result)=>{
+        res.send(result);
+    })
+})
 
 // app.post("/api/post", (req, res)=>{
 //     const {name , email, contact} = req.body;
